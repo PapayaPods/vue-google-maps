@@ -1,7 +1,7 @@
 <template>
     <label>
         <span v-text="label"></span>
-        <input type="text" v-el:input :placeholder="placeholder" :class="class"/>
+        <input type="text" v-el:input :value.sync="place.name" :placeholder="placeholder" :class="class"/>
     </label>
 </template>
 
@@ -65,7 +65,6 @@
     mixins: [getPropsValuesMixin],
     ready () {
       const input = this.$els.input;
-      input.value = this.place.name;
       loaded.then(() => {
         window.i = input;
         const options = _.clone(this.getPropsValues());
