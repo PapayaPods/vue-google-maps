@@ -88,6 +88,7 @@
     props: props,
     events: {
       'g-place_changed' () {
+        console.log(this.autoCompleter);
         this.place = this.autoCompleter.getPlace();
       }
     }
